@@ -1,21 +1,21 @@
-/* Basic CSS styles for the container */
+
 .container {
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    max-width: 500px; /* Adjust as needed */
+    max-width: 500px; 
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for form labels */
+
 label {
     display: block;
     margin-bottom: 5px;
 }
 
-/* Styles for form inputs */
+
 input[type="text"],
 input[type="date"],
 textarea {
@@ -27,7 +27,7 @@ textarea {
     box-sizing: border-box;
 }
 
-/* Style for buttons */
+
 button {
     padding: 8px 12px;
     margin-right: 10px;
@@ -42,7 +42,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Style for header */
 .header {
     background-color: black;
     color: white;
