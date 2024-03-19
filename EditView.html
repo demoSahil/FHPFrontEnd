@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details Form</title>
+    <link rel="stylesheet" href="editViewStyle.css">
+</head>
+<body>
+    <div class="header">
+        <h1>FHP Employee Form</h1>
+    </div>
+
+    <div class="container">
+        <form id="employeeForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName"><br>
+            
+            <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" name="middleName"><br>
+            
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName"><br>
+            
+            <label for="currentAddress">Current Address:</label>
+            <textarea id="currentAddress" name="currentAddress"></textarea><br>
+            
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob" name="dob"><br>
+            
+            <label for="joiningDate">Joining Date:</label>
+            <input type="date" id="joiningDate" name="joiningDate"><br>
+            
+            <!-- Buttons for New Update -->
+            <button type="button" id="add" class="hidden">Add</button>
+            <button type="button" id="edit" class="hidden">Edit</button>
+            <button type="button" id="clear" class="hidden">Clear</button>
+            
+            <!-- Buttons for View -->
+            <button type="button" id="first" class="hidden">First</button>
+            <button type="button" id="previous" class="hidden">Previous</button>
+            <button type="button" id="next" class="hidden">Next</button>
+            <button type="button" id="last" class="hidden">Last</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const action = urlParams.get('action');
+
+            if (action === 'new' || action === 'update') {
+
+                document.getElementById('add').classList.remove('hidden');
+                document.getElementById('edit').classList.remove('hidden');
+                document.getElementById('clear').classList.remove('hidden');
+            } else if (action === 'view') {
+                // For View action, hide Add, Edit, and Clear buttons, show navigation buttons
+                document.getElementById('add').classList.add('hidden');
+                document.getElementById('edit').classList.add('hidden');
+                document.getElementById('clear').classList.add('hidden');
+                document.getElementById('first').classList.remove('hidden');
+                document.getElementById('previous').classList.remove('hidden');
+                document.getElementById('next').classList.remove('hidden');
+                document.getElementById('last').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
